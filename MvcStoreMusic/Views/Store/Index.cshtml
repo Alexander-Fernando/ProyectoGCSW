@@ -1,0 +1,17 @@
+﻿<!--INDICA QUE LA VISTA ESTÁ ESPERANDO VARIOS OBJETOS GÉNERO-->
+@model IEnumerable<DiscoClub.StoreMusic.Entidades.Tienda.Genre>
+
+@{
+    ViewBag.Title = "Géneros | GCS";
+}
+
+<h2>Búsqueda de géneros</h2>
+<p>Selecciona entre los @Model.Count() géneros:</p>
+<ul>
+    @foreach(var genero in Model)
+    {
+        <!--DANDO CLICK NAVEGARÁ DE Store/Browse a Store/Browse?genero=genero.Name-->
+        <li>@Html.ActionLink(genero.Name, "Browse", new { genero = genero.Name })  </li>
+    }
+</ul>
+

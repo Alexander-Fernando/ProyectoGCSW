@@ -1,0 +1,21 @@
+﻿@model IEnumerable<DiscoClub.StoreMusic.Entidades.Tienda.MusicStoreEntity>
+
+@{
+    ViewBag.Title = "Búsqueda de género";
+}
+
+<h2>Búsqueda de género: @Model.ElementAtOrDefault(1).NameGen</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<ul>
+    @foreach (var album in Model)
+    {
+        <li>
+            @Html.ActionLink(album.Title, "Detalles", new { id = album.AlbumId })
+            @*@album.Title*@
+        </li>
+    }
+</ul>
